@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Pestaña uno 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list lines="none">
+      <ion-list-header>
+        <ion-label>Json </ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let ac of arraydata">
+        <ion-icon slot="start" color="medium" name="book"></ion-icon>
+        <ion-label>{{ac.title}}</ion-label>
+      </ion-item>
+
+    </ion-list>
+</ion-content>

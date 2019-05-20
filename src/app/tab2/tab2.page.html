@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="danger" >
+    <img src="https://newtrip.com.co/wp-content/themes/newtrip/assets/images/logo_menu_w.png" alt="">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contenido centrado">
+
+  <h1 *ngIf="dtos == false" >
+    Pulsa para scanear Qr
+  </h1>
+ 
+  <ion-button color="danger" *ngIf="dtos == false" (click)="scanCode()"  >
+    Scanear
+  </ion-button>
+  <div class="table-wrapper-scroll-y my-custom-scrollbar" *ngIf="dtos == false">
+  <ion-card *ngFor="let ac of arraycar" >
+    <ion-card-header>
+     <img src="{{ac.img}}" alt="">
+      <ion-card-title>{{ac.name}}</ion-card-title>
+    </ion-card-header>
+  
+  </ion-card></div>
+  
+  <form class="centrado" *ngIf="dtos == true" [formGroup]="myForm" (ngSubmit)="saveData()">
+    <ion-list>
+      <ion-item>
+        <ion-icon name="person" item-start></ion-icon>
+        <ion-label stacked>Nombres:</ion-label>
+        <ion-input formControlName="name" type="text" placeholder="Nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="person" item-start></ion-icon>
+        <ion-label stacked>Apellidos:</ion-label>
+        <ion-input formControlName="lastName" type="text" placeholder="Apellidos"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="mail" item-start></ion-icon>
+        <ion-label stacked>Correo electronico:</ion-label>
+        <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+      </ion-item>
+   
+      <div formGroupName="passwordRetry">
+        <ion-item>
+          <ion-icon name="eye" item-start></ion-icon>
+          <ion-label stacked>Contraseña:</ion-label>
+          <ion-input formControlName="password" type="password" placeholder="Contraseña"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="eye" item-start></ion-icon>
+          <ion-label stacked>Confirmar contraseña:</ion-label>
+          <ion-input formControlName="passwordConfirmation" type="password" placeholder="Confirmar contraseña"></ion-input>
+        </ion-item>
+      </div>
+      
+    </ion-list>
+    
+      <ion-button color="danger" (click)="saveData()" >Guardar</ion-button>
+   
+  </form>
+</ion-content>

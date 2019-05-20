@@ -1,0 +1,28 @@
+
+
+ form{
+    --background: #FED900;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    border-radius: 10%;
+ }
+img{
+    display: block;
+    width: 50%;
+    height: 20%;
+    margin-left: 25%;
+    margin-top: auto;
+}
+.centrado{
+    text-align: center;
+  }
+  .my-custom-scrollbar {
+    position: relative;
+    height: 65vh;
+    overflow: auto;
+    }
+ion-card{
+    --background: #56b9dd;
+}   
